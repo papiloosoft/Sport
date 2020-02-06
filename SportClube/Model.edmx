@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SportClubeModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\Amir\Desktop\Develop\C#\SportClube\SportClube\SportClube\bin\Debug\SportClube.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClubePaye">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Type" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Date" Type="integer" />
+          <Property Name="Price" Type="integer" />
+          <Property Name="Pardakhti" Type="integer" />
+          <Property Name="NumberFactor" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Coach">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Date" Type="integer" />
+          <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="BirthDay" Type="integer" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Komision" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlaceName" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Option1" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Option2" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Option3" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Date" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="BirthDay" Type="integer" />
+          <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="NameService" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="TypeService" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="DateService" Type="integer" />
+          <Property Name="Bestankar" Type="integer" />
+          <Property Name="Bedehkar" Type="integer" />
+          <Property Name="Pardakhti" Type="integer" />
+          <Property Name="TypePey" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="TypeUser" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Train">
+          <Key>
+            <PropertyRef Name=" Id" />
+          </Key>
+          <Property Name=" Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeTrain" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="CoachName" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="PlayerName" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="DateTrain" Type="integer" />
+          <Property Name="TimeTrain" Type="integer" />
+          <Property Name=" Place" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="TypePey">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Type" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Price" Type="integer" />
+        </EntityType>
+        <EntityType Name="TypeService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameService" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="PriceService" Type="integer" />
+          <Property Name="TypeService" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityContainer Name="SportClubeModelStoreContainer">
+          <EntitySet Name="ClubePaye" EntityType="Self.ClubePaye" store:Type="Tables" />
+          <EntitySet Name="Coach" EntityType="Self.Coach" store:Type="Tables" />
+          <EntitySet Name="Place" EntityType="Self.Place" store:Type="Tables" />
+          <EntitySet Name="Player" EntityType="Self.Player" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" store:Type="Tables" />
+          <EntitySet Name="Train" EntityType="Self.Train" store:Type="Tables" />
+          <EntitySet Name="TypePey" EntityType="Self.TypePey" store:Type="Tables" />
+          <EntitySet Name="TypeService" EntityType="Self.TypeService" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SportClubeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ClubePaye">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="Int64" />
+          <Property Name="Price" Type="Int64" />
+          <Property Name="Pardakhti" Type="Int64" />
+          <Property Name="NumberFactor" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Coach">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Eshterak" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="Int64" />
+          <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDay" Type="Int64" />
+          <Property Name="PostalCode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Komision" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Option1" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Option2" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Option3" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Eshterak" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDay" Type="Int64" />
+          <Property Name="Email" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Eshterak" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="NameService" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TypeService" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="DateService" Type="Int64" />
+          <Property Name="Bestankar" Type="Int64" />
+          <Property Name="Bedehkar" Type="Int64" />
+          <Property Name="Pardakhti" Type="Int64" />
+          <Property Name="TypePey" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TypeUser" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Train">
+          <Key>
+            <PropertyRef Name="C_Id" />
+          </Key>
+          <Property Name="C_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeTrain" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CoachName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="PlayerName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="DateTrain" Type="Int64" />
+          <Property Name="TimeTrain" Type="Int64" />
+          <Property Name="C_Place" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TypePey">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int64" />
+        </EntityType>
+        <EntityType Name="TypeService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameService" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="PriceService" Type="Int64" />
+          <Property Name="TypeService1" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="SportClubeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClubePaye" EntityType="Self.ClubePaye" />
+          <EntitySet Name="Coach" EntityType="Self.Coach" />
+          <EntitySet Name="Place" EntityType="Self.Place" />
+          <EntitySet Name="Player" EntityType="Self.Player" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <EntitySet Name="Train" EntityType="Self.Train" />
+          <EntitySet Name="TypePey" EntityType="Self.TypePey" />
+          <EntitySet Name="TypeService" EntityType="Self.TypeService" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SportClubeModelStoreContainer" CdmEntityContainer="SportClubeEntities">
+          <EntitySetMapping Name="ClubePaye">
+            <EntityTypeMapping TypeName="SportClubeModel.ClubePaye">
+              <MappingFragment StoreEntitySet="ClubePaye">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Pardakhti" ColumnName="Pardakhti" />
+                <ScalarProperty Name="NumberFactor" ColumnName="NumberFactor" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coach">
+            <EntityTypeMapping TypeName="SportClubeModel.Coach">
+              <MappingFragment StoreEntitySet="Coach">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Eshterak" ColumnName="Eshterak" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Komision" ColumnName="Komision" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Place">
+            <EntityTypeMapping TypeName="SportClubeModel.Place">
+              <MappingFragment StoreEntitySet="Place">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Player">
+            <EntityTypeMapping TypeName="SportClubeModel.Player">
+              <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Eshterak" ColumnName="Eshterak" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="SportClubeModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Eshterak" ColumnName="Eshterak" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="NameService" ColumnName="NameService" />
+                <ScalarProperty Name="TypeService" ColumnName="TypeService" />
+                <ScalarProperty Name="DateService" ColumnName="DateService" />
+                <ScalarProperty Name="Bestankar" ColumnName="Bestankar" />
+                <ScalarProperty Name="Bedehkar" ColumnName="Bedehkar" />
+                <ScalarProperty Name="Pardakhti" ColumnName="Pardakhti" />
+                <ScalarProperty Name="TypePey" ColumnName="TypePey" />
+                <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Train">
+            <EntityTypeMapping TypeName="SportClubeModel.Train">
+              <MappingFragment StoreEntitySet="Train">
+                <ScalarProperty Name="C_Id" ColumnName=" Id" />
+                <ScalarProperty Name="TypeTrain" ColumnName="TypeTrain" />
+                <ScalarProperty Name="CoachName" ColumnName="CoachName" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="DateTrain" ColumnName="DateTrain" />
+                <ScalarProperty Name="TimeTrain" ColumnName="TimeTrain" />
+                <ScalarProperty Name="C_Place" ColumnName=" Place" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypePey">
+            <EntityTypeMapping TypeName="SportClubeModel.TypePey">
+              <MappingFragment StoreEntitySet="TypePey">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeService">
+            <EntityTypeMapping TypeName="SportClubeModel.TypeService">
+              <MappingFragment StoreEntitySet="TypeService">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameService" ColumnName="NameService" />
+                <ScalarProperty Name="PriceService" ColumnName="PriceService" />
+                <ScalarProperty Name="TypeService1" ColumnName="TypeService" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

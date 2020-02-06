@@ -1,0 +1,234 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SportClube"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="SportClube.MainWindow"
+        mc:Ignorable="d"
+        Title="خانه" Height="750" Width="1100" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <TabControl x:Name="tabControl" FlowDirection="RightToLeft" FontFamily="Tahoma" FontSize="16"  TextOptions.TextFormattingMode="Display" >
+        <TabItem x:Name="New" Header="جدید">
+            <Grid Background="#FFE5E5E5" Margin="-2,1,-5,-1">
+
+                <DataGrid x:Name="dgShow" HorizontalAlignment="Left" Margin="11,357,0,0" VerticalAlignment="Top" Height="316" Width="1064" FlowDirection="RightToLeft" />
+
+
+
+                <GroupBox x:Name="grpNew" Header="" HorizontalAlignment="Left" Height="60" Margin="14,0,0,0" VerticalAlignment="Top" Width="602">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="97*"/>
+                            <ColumnDefinition Width="96*"/>
+                            <ColumnDefinition Width="71*"/>
+                            <ColumnDefinition Width="145*"/>
+                            <ColumnDefinition Width="181*"/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton x:Name="rdbPlayer" Content="بازیکن" HorizontalAlignment="Left" Margin="11,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.556" Height="18" Width="59"/>
+                        <RadioButton x:Name="rdbCoach" Content="مربی" HorizontalAlignment="Left" Margin="11,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.519,0.667" Grid.Column="1" Height="18" Width="54"/>
+                        <Label x:Name="lblDate" Content="تاریخ" HorizontalAlignment="Left" Margin="11,2,0,0" VerticalAlignment="Top" Grid.Column="2" Height="29" Width="40"/>
+                        <PersianDateControls:PersianDatePicker Name="dateEnter" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Width="118" Height="27" Grid.Column="3"/>
+
+                        <Button x:Name="btnRefres" Content="بازسازی" HorizontalAlignment="Left" Margin="11,1,0,0" VerticalAlignment="Top" Width="95" Click="btnRefresh_Click" Height="28" Grid.Column="4" Background="Coral"/>
+
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="grpNew2" Header="" HorizontalAlignment="Left" Height="281" Margin="14,64,0,0" VerticalAlignment="Top" Width="1060">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="188*"/>
+                            <ColumnDefinition Width="192*"/>
+                            <ColumnDefinition Width="207*"/>
+                            <ColumnDefinition Width="152*"/>
+                            <ColumnDefinition Width="327*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="lblName" Content="نام" HorizontalAlignment="Left" Margin="11,4,0,0" VerticalAlignment="Top" Height="29" Width="28"/>
+                        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164"/>
+                        <Label x:Name="lblPgone" Content="شماره همراه" HorizontalAlignment="Left" Margin="11,4,0,0" VerticalAlignment="Top" Grid.Column="1" Height="29" Width="100"/>
+                        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" Grid.Column="1"/>
+                        <Label x:Name="lblTel" Content="شماره منزل" HorizontalAlignment="Left" Margin="11,4,0,0" VerticalAlignment="Top" Grid.Column="2" Width="101" Height="29"/>
+                        <TextBox x:Name="txtTel" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" Grid.Column="2"/>
+                        <Label x:Name="lblBirthDay" Content="تاریخ تولد" HorizontalAlignment="Left" Margin="12,4,0,0" VerticalAlignment="Top" Grid.Column="3" Width="86" />
+                        <PersianDateControls:PersianDatePicker Name="dateBirhDay" HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.5,0.52" Grid.Column="3" Height="28"/>
+
+                        <Label x:Name="lblAddress" Content="آدرس" HorizontalAlignment="Left" Margin="11,57,0,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="22" Margin="11,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="353" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lblPostalCode" Content="کد پستی" HorizontalAlignment="Left" Margin="11,57,0,0" VerticalAlignment="Top" Grid.Column="2" Width="108"/>
+                        <TextBox x:Name="txtPostalCode" HorizontalAlignment="Left" Height="22" Margin="11,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" Grid.Column="2"/>
+                        <Label x:Name="lblEmail" Content="ایمیل" HorizontalAlignment="Left" Margin="11,109,0,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="352" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lblEshterak" Content="کد اشتراک" HorizontalAlignment="Left" Margin="14,109,0,0" VerticalAlignment="Top" Grid.Column="2" Width="92"/>
+                        <TextBox x:Name="txtEshterak" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" Grid.Column="2"/>
+                        <Label x:Name="lblDescription" Content="توضیحات" HorizontalAlignment="Left" Margin="11,165,0,0" VerticalAlignment="Top" Grid.Column="1" Width="79"/>
+                        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="46" Margin="15,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" Grid.ColumnSpan="2" Grid.Column="1"/>
+                        <Image x:Name="pic" Height="206" Margin="113,4,12,0" VerticalAlignment="Top" Stretch="Fill" Source="pic/tennis.jpg" Grid.Column="4"/>
+                        <Button x:Name="btnSave" Content="ثبت" HorizontalAlignment="Left" Margin="112,205,0,0" VerticalAlignment="Top" Width="134" Height="44" Click="btnSave_Click" Grid.Column="3" Background="Coral" RenderTransformOrigin="0.506,0.443" Grid.ColumnSpan="2"/>
+                        <Button x:Name="btnSelectPicture" Content="انتخاب عکس" HorizontalAlignment="Left" Margin="201,217,0,0" VerticalAlignment="Top" Width="114" Height="32" Grid.Column="4"/>
+                        <Label x:Name="lblKomision" Content="کمیسیون" HorizontalAlignment="Left" Margin="11,165,0,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtName_Copy" HorizontalAlignment="Left" Height="22" Margin="12,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="82"/>
+                        <Label x:Name="lblKomision_Copy" Content="%" HorizontalAlignment="Left" Margin="96,190,0,0" VerticalAlignment="Top"/>
+
+
+                    </Grid>
+                </GroupBox>
+
+            </Grid>
+        </TabItem>
+        <TabItem Name="Service" Header="خدمت">
+            <Grid Background="#FFE5E5E5" Margin="-2,1,-5,-1">
+
+                <DataGrid x:Name="dgService" HorizontalAlignment="Left" Margin="11,357,0,0" VerticalAlignment="Top" Height="316" Width="1064" FlowDirection="RightToLeft" />
+
+
+
+                <GroupBox x:Name="grpService" Header="" HorizontalAlignment="Left" Height="60" Margin="14,0,0,0" VerticalAlignment="Top" Width="602">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="97*"/>
+                            <ColumnDefinition Width="96*"/>
+                            <ColumnDefinition Width="71*"/>
+                            <ColumnDefinition Width="145*"/>
+                            <ColumnDefinition Width="181*"/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton x:Name="rdbPlayer2" Content="بازیکن" HorizontalAlignment="Left" Margin="11,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.556" Height="18" Width="59"/>
+                        <RadioButton x:Name="rdbCoach2" Content="مربی" HorizontalAlignment="Left" Margin="11,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.519,0.667" Grid.Column="1" Height="18" Width="54"/>
+                        <Label x:Name="lblDate2" Content="تاریخ" HorizontalAlignment="Left" Margin="11,2,0,0" VerticalAlignment="Top" Grid.Column="2" Height="29" Width="40"/>
+                        <PersianDateControls:PersianDatePicker Name="dateEnter2" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Width="118" Height="27" Grid.Column="3"/>
+
+                        <Button x:Name="btnRefres2" Content="بازسازی" HorizontalAlignment="Left" Margin="11,1,0,0" VerticalAlignment="Top" Width="95" Click="btnRefresh_Click" Height="28" Grid.Column="4" Background="Coral"/>
+
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="grpService2" Header="" HorizontalAlignment="Left" Height="281" Margin="14,64,0,0" VerticalAlignment="Top" Width="1060">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="89*"/>
+                            <ColumnDefinition Width="89*"/>
+                            <ColumnDefinition Width="95*"/>
+                            <ColumnDefinition Width="95*"/>
+                            <ColumnDefinition Width="163*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="lblName2" Content="نام" HorizontalAlignment="Left" Margin="18,3,0,0" VerticalAlignment="Top" Height="29" Width="28" Grid.Column="1"/>
+                        <TextBox x:Name="txtName2" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+                        <Label x:Name="lblPgone2" Content="شماره همراه" HorizontalAlignment="Left" Margin="11,4,0,0" VerticalAlignment="Top" Grid.Column="2" Height="29" Width="100"/>
+                        <TextBox x:Name="txtPhone2" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Grid.Column="2"/>
+
+                        <Label x:Name="lblService" Content="سرویس" HorizontalAlignment="Left" Margin="11,57,0,0" VerticalAlignment="Top" Height="29" Width="65"/>
+                        <TextBox x:Name="txtService" HorizontalAlignment="Left" Height="22" Margin="11,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163"/>
+                        <Label x:Name="lblBestankar" Content="بستانکار" HorizontalAlignment="Left" Margin="11,109,0,0" VerticalAlignment="Top" Height="29" Width="66"/>
+                        <TextBox x:Name="txtBestankar" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163"/>
+                        <Label x:Name="lblEshterak2" Content="کد اشتراک" HorizontalAlignment="Left" Margin="13,0,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+                        <TextBox x:Name="txtEshterak2" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165"/>
+                        <Label x:Name="lblBedehkar" Content="بدهکار" HorizontalAlignment="Left" Margin="11,109,0,0" VerticalAlignment="Top" Grid.Column="1" Width="79" Height="29"/>
+                        <TextBox x:Name="txtBedehkar" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+                        <Image x:Name="pic2" Height="206" Margin="105,4,20,0" VerticalAlignment="Top" Stretch="Fill" Source="pic/tennis.jpg" Grid.Column="4"/>
+                        <Button x:Name="btnSaveService" Content="ثبت" HorizontalAlignment="Left" Margin="39,172,0,0" VerticalAlignment="Top" Width="146" Height="39" Click="btnSave_Click" Grid.Column="3" Background="Coral" RenderTransformOrigin="0.506,0.443"/>
+                        <Button x:Name="btnSelectPicture2" Content="انتخاب عکس" HorizontalAlignment="Left" Margin="193,217,0,0" VerticalAlignment="Top" Width="114" Height="32" Grid.Column="4"/>
+                        <Label x:Name="lblPardakhti" Content="پرداختی" HorizontalAlignment="Left" Margin="11,109,0,0" VerticalAlignment="Top" Grid.Column="2" Height="29" Width="75"/>
+                        <TextBox x:Name="txtPardakhti" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Grid.Column="2"/>
+                        <Button x:Name="btnServiceAdd" Content="+" HorizontalAlignment="Left" Margin="11,85,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="btnSave_Click" Grid.Column="1" Background="Green" RenderTransformOrigin="0.506,0.443"/>
+                        <Button x:Name="btnServiceMines" Content="-" HorizontalAlignment="Left" Margin="50,85,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="btnSave_Click" Grid.Column="1" Background="Red" RenderTransformOrigin="0.506,0.443"/>
+                        <Label x:Name="lblTypeService" Content="نوع سرویس" HorizontalAlignment="Left" Margin="11,57,0,0" VerticalAlignment="Top" Grid.Column="2" Height="29" Width="95"/>
+                        <TextBox x:Name="txtTypeService" HorizontalAlignment="Left" Height="22" Margin="11,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Grid.Column="2"/>
+                        <Button x:Name="btnTypeServiceAdd" Content="+" HorizontalAlignment="Left" Margin="12,85,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="btnSave_Click" Grid.Column="3" Background="Green" RenderTransformOrigin="0.506,0.443"/>
+                        <Button x:Name="btnTypeServiceMines" Content="-" HorizontalAlignment="Left" Margin="51,85,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="btnSave_Click" Grid.Column="3" Background="Red" RenderTransformOrigin="0.506,0.443"/>
+                        <Label x:Name="lblTypePey" Content="نوع پرداخت" HorizontalAlignment="Left" Margin="11,109,0,0" VerticalAlignment="Top" Grid.Column="3" Height="29" Width="95"/>
+                        <TextBox x:Name="txtTyePey" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Grid.Column="3"/>
+
+                    </Grid>
+                </GroupBox>
+
+            </Grid>
+        </TabItem>
+        <TabItem x:Name="Setting" Header="تنطیمات">
+            <Grid Background="#FFE5E5E5" Margin="-2,5,-5,-5">
+                <GroupBox Margin="14,0,14,496" Padding="10" Grid.Column="0" Header="مشخصات">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="221*"/>
+                            <ColumnDefinition Width="221*"/>
+                            <ColumnDefinition Width="221*"/>
+                            <ColumnDefinition Width="221*"/>
+                            <ColumnDefinition Width="142*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="lblNameClube" Content="نام باشگاه" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,2,0,0" Height="29" Width="80"/>
+                        <TextBox x:Name="txtNameClube" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                        <Label x:Name="lblEmailClube" Content="ایمیل باشگاه" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,69,0,0" Height="29" Width="100"/>
+                        <TextBox x:Name="txtEmailClube" HorizontalAlignment="Left" Height="22" Margin="11,104,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+                        <Label x:Name="lblNameManagerClube" Content="نام مدیر" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,2,0,0" Grid.Column="1" Height="29" Width="80"/>
+                        <TextBox x:Name="txtManageNameClube" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Grid.Column="1"/>
+                        <Label x:Name="lblAddressClube" Content="آدرس باشگاه" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,69,0,0" Height="29" Width="101" Grid.Column="1"/>
+                        <TextBox x:Name="txtAdressClube" HorizontalAlignment="Left" Height="22" Margin="11,104,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="422" Grid.Column="1" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lblPhoneClube" Content="تلفن همراه باشگاه" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,2,0,0" Grid.Column="2" Height="29" Width="139"/>
+                        <TextBox x:Name="txtPhoneClube" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Grid.Column="2"/>
+                        <Label x:Name="lblTelClube" Content="تلفن باشگاه" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,2,0,0" Grid.Column="3" Height="29" Width="101"/>
+                        <TextBox x:Name="txtTelClube" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Grid.Column="3"/>
+                        <Label x:Name="lblReagentClube" Content="معرف" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,69,0,0" Height="29" Width="100" Grid.Column="3"/>
+                        <TextBox x:Name="txtReagentClube" HorizontalAlignment="Left" Height="22" Margin="12,104,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Grid.Column="3"/>
+                        <Button x:Name="btnSaveClube" Content="ثبت" Grid.Column="4" HorizontalAlignment="Left" Margin="22,83,0,0" VerticalAlignment="Top" Width="112" Height="46" Background="Coral"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Margin="14,200,14,306" Padding="10" Grid.Column="0" Header="فعال سازی نرم افزار">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="440*"/>
+                            <ColumnDefinition Width="248*"/>
+                            <ColumnDefinition Width="345*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="lblNameClub" Content="سریال نرم افزار" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,2,0,0" Height="29" Width="116"/>
+                        <TextBox x:Name="txtSerialApp" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="417"/>
+                        <Label x:Name="lblEmailClub" Content="کد فعال سازی" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,69,0,0" Height="29" Width="130"/>
+                        <TextBox x:Name="txtEmailClub" HorizontalAlignment="Left" Height="22" Margin="11,104,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="417"/>
+                        <Label x:Name="lblCodeRahgiri" Content="کد رهگیری" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,2,0,0" Grid.Column="1" Height="29" Width="101"/>
+                        <TextBox x:Name="txtCodeRahgiri" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Grid.Column="1"/>
+                        <Button x:Name="btnSaveClub" Content="فعال سازی" Grid.Column="1" HorizontalAlignment="Left" Margin="98,77,0,0" VerticalAlignment="Top" Width="112" Height="46" Background="Coral"/>
+                    </Grid>
+                </GroupBox>
+
+            </Grid>
+        </TabItem>
+        <TabItem x:Name="ClubPaye" Header="هزینه">
+            <Grid Background="#FFE5E5E5" Margin="-2,5,-5,-5">
+                <GroupBox x:Name="grpPaye" Header="" HorizontalAlignment="Left" Height="281" Margin="14,0,0,0" VerticalAlignment="Top" Width="1060">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="89*"/>
+                            <ColumnDefinition Width="89*"/>
+                            <ColumnDefinition Width="95*"/>
+                            <ColumnDefinition Width="95*"/>
+                            <ColumnDefinition Width="163*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="txtPhonePaye" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+                        <Label x:Name="lblPhonePaye" Content="شماره همراه" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Grid.Column="1" Height="28" Width="100"/>
+
+                        <Label x:Name="lblBuye" Content="محصول" HorizontalAlignment="Left" Margin="11,57,0,0" VerticalAlignment="Top" Height="29" Width="65"/>
+                        <TextBox x:Name="txtBuye" HorizontalAlignment="Left" Height="22" Margin="11,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163"/>
+                        <Label x:Name="lblBestankar1" Content="بستانکار" HorizontalAlignment="Left" Margin="11,109,0,0" VerticalAlignment="Top" Height="29" Width="66"/>
+                        <TextBox x:Name="txtBestanka1r" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163"/>
+                        <Label x:Name="lblNamePaye" Content="نام" HorizontalAlignment="Left" Margin="13,0,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+                        <TextBox x:Name="txtNamePaye" HorizontalAlignment="Left" Height="22" Margin="11,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165"/>
+                        <Label x:Name="lblBedehkar1" Content="بدهکار" HorizontalAlignment="Left" Margin="11,109,0,0" VerticalAlignment="Top" Grid.Column="1" Width="79" Height="29"/>
+                        <TextBox x:Name="txtBedehk1ar" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" Grid.Column="1"/>
+                        <Image x:Name="pic12" Height="206" Margin="105,4,20,0" VerticalAlignment="Top" Stretch="Fill" Source="pic/tennis.jpg" Grid.Column="4"/>
+                        <Button x:Name="btnSave1Service" Content="ثبت" HorizontalAlignment="Left" Margin="39,172,0,0" VerticalAlignment="Top" Width="146" Height="39" Click="btnSave_Click" Grid.Column="3" Background="Coral" RenderTransformOrigin="0.506,0.443"/>
+                        <Button x:Name="btnSele1ctPicture2" Content="انتخاب عکس" HorizontalAlignment="Left" Margin="193,217,0,0" VerticalAlignment="Top" Width="114" Height="32" Grid.Column="4"/>
+                        <Label x:Name="lblPardak1hti" Content="پرداختی" HorizontalAlignment="Left" Margin="11,109,0,0" VerticalAlignment="Top" Grid.Column="2" Height="29" Width="75"/>
+                        <TextBox x:Name="txtPard1akhti" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Grid.Column="2"/>
+                        <Button x:Name="btnServic1eAdd" Content="+" HorizontalAlignment="Left" Margin="11,85,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="btnSave_Click" Grid.Column="1" Background="Green" RenderTransformOrigin="0.506,0.443"/>
+                        <Button x:Name="btnService1Mines" Content="-" HorizontalAlignment="Left" Margin="50,85,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="btnSave_Click" Grid.Column="1" Background="Red" RenderTransformOrigin="0.506,0.443"/>
+                        <Label x:Name="lblPriceBuye" Content="قیمت محصول" HorizontalAlignment="Left" Margin="11,57,0,0" VerticalAlignment="Top" Grid.Column="2" Height="29" Width="110"/>
+                        <TextBox x:Name="txtPriceBuye" HorizontalAlignment="Left" Height="22" Margin="11,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Grid.Column="2"/>
+                        <Button x:Name="btnTypeServi1ceAdd" Content="+" HorizontalAlignment="Left" Margin="12,85,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="btnSave_Click" Grid.Column="3" Background="Green" RenderTransformOrigin="0.506,0.443"/>
+                        <Button x:Name="btnTypeService1Mines" Content="-" HorizontalAlignment="Left" Margin="51,85,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="btnSave_Click" Grid.Column="3" Background="Red" RenderTransformOrigin="0.506,0.443"/>
+                        <Label x:Name="lblType1Pey" Content="نوع پرداخت" HorizontalAlignment="Left" Margin="11,109,0,0" VerticalAlignment="Top" Grid.Column="3" Height="29" Width="95"/>
+                        <TextBox x:Name="txtTyeP1ey" HorizontalAlignment="Left" Height="22" Margin="11,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Grid.Column="3"/>
+
+                    </Grid>
+                </GroupBox>
+                <DataGrid Name="grdName" HorizontalAlignment="Left" Height="378" Margin="14,300,0,0" VerticalAlignment="Top" Width="1060"/>
+
+
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

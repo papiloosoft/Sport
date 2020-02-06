@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportClubeModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\Amir\Desktop\Develop\C#\SportClube\SportClube\SportClube\bin\Debug\SportClube.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ClubePaye">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Type" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Date" Type="integer" />
+    <Property Name="Price" Type="integer" />
+    <Property Name="Pardakhti" Type="integer" />
+    <Property Name="NumberFactor" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Coach">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Date" Type="integer" />
+    <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="BirthDay" Type="integer" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Komision" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Option1" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Option2" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Option3" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Date" Type="integer" />
+    <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="BirthDay" Type="integer" />
+    <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="NameService" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="TypeService" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DateService" Type="integer" />
+    <Property Name="Bestankar" Type="integer" />
+    <Property Name="Bedehkar" Type="integer" />
+    <Property Name="Pardakhti" Type="integer" />
+    <Property Name="TypePey" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="TypeUser" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Train">
+    <Key>
+      <PropertyRef Name=" Id" />
+    </Key>
+    <Property Name=" Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeTrain" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CoachName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DateTrain" Type="integer" />
+    <Property Name="TimeTrain" Type="integer" />
+    <Property Name=" Place" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="TypePey">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Type" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Price" Type="integer" />
+  </EntityType>
+  <EntityType Name="TypeService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameService" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PriceService" Type="integer" />
+    <Property Name="TypeService" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityContainer Name="SportClubeModelStoreContainer">
+    <EntitySet Name="ClubePaye" EntityType="Self.ClubePaye" store:Type="Tables" />
+    <EntitySet Name="Coach" EntityType="Self.Coach" store:Type="Tables" />
+    <EntitySet Name="Place" EntityType="Self.Place" store:Type="Tables" />
+    <EntitySet Name="Player" EntityType="Self.Player" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" store:Type="Tables" />
+    <EntitySet Name="Train" EntityType="Self.Train" store:Type="Tables" />
+    <EntitySet Name="TypePey" EntityType="Self.TypePey" store:Type="Tables" />
+    <EntitySet Name="TypeService" EntityType="Self.TypeService" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
